@@ -13,14 +13,29 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+    -- completion = {
+    --   list = {
+    --     selection = {
+    --       -- When `true`, will automatically select the first item in the completion list
+    --       preselect = false,
+    --       -- preselect = function(ctx) return vim.bo.filetype ~= 'markdown' end,
+    --
+    --       -- When `true`, inserts the completion item automatically when selecting it
+    --       -- You may want to bind a key to the `cancel` command (default <C-e>) when using this option,
+    --       -- which will both undo the selection and hide the completion menu
+    --       auto_insert = true,
+    --       -- auto_insert = function(ctx) return vim.bo.filetype ~= 'markdown' end
+    --     },
+    --   },
+    -- },
     -- 'default' for mappings similar to built-in completion
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
     keymap = {
-      preset = "enter",
-      ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-      ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+      preset = "super-tab",
+      -- ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+      -- ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
     },
     appearance = {
       -- Sets the fallback highlight groups to nvim-cmp's highlight groups
